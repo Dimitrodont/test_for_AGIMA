@@ -1,0 +1,529 @@
+﻿/* способ ниже очищает стили поумолчанию */
+*{
+	padding: 0;	/* внутренние отступы */
+	margin: 0;	/* внешнии отступы */
+	border: 0;	/* границы */
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none; color: black;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+/*****************************************************/
+
+@font-face{
+	font-family: "Lilita2";
+	src: url("../fonts/Lilita2/Lilita2.eot");
+	src: url("../fonts/Lilita2/Lilita2.woff") format("woff"),
+	url("../fonts/Lilita2/Lilita2.ttf") format("ttf"),
+	url("../fonts/Lilita2/Lilita2.svg") format("svg"),
+	url("../fonts/Lilita2/Lilita2.otf") format("otf");
+}
+@font-face{
+	font-family: "Roboto-Black";
+	src: url("../fonts/Roboto-Black/Roboto-Black.eot");
+	src: url("../fonts/Roboto-Black/Roboto-Black.woff") format("woff"),
+	url("../fonts/Roboto-Black/Roboto-Black.ttf") format("ttf"),
+	url("../fonts/Roboto-Black/Roboto-Black.svg") format("svg"),
+	url("../fonts/Roboto-Black/Roboto-Black.otf") format("otf");
+}
+@font-face{
+	font-family: "Montserrat Light";
+	src: url("../fonts/Montserrat Light/Montserrat Light.eot");
+	src: url("../fonts/Montserrat Light/Montserrat Light.woff") format("woff"),
+	url("../fonts/Montserrat Light/Montserrat Light.ttf") format("ttf"),
+	url("../fonts/Montserrat Light/Montserrat Light.svg") format("svg"),
+	url("../fonts/Montserrat Light/Montserrat Light.otf") format("otf");
+}
+body *{
+	/*border: 1px solid magenta;*/
+}
+body{
+	background-image: url("../img/background6.png");
+}
+header{
+	padding: 10px 50px 0px 50px;
+	position: sticky;	/* липнит к верху */
+  	top: 0;
+  	background-color: rgba(117, 18, 0, 0.9);
+  	height: 120px;
+  	z-index: 99;
+}
+.hat{
+	font-family: "Lilita2";
+	display: flex;	/* отображать как flex элемент*/
+	justify-content: space-between;	/* дать расстояние между блоками*/
+	align-items: flex-start;
+}
+.nav{
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+.nav a{
+	width: 100%;	/* блок заполнит все свободное пространство*/
+	text-align: center;	/* выравнивание по центру*/
+	font-size: 20px;
+	font-family: "Roboto-Black";
+	max-height: 30px;
+	overflow: hidden;	/* если что то не лезет - скрыть */
+}
+footer{
+	background-color: rgb(40, 41, 35);
+	color: white;
+	display: flex;
+	justify-content: space-around;
+	padding: 6px;
+	height: 116px;
+}
+footer *{
+	font-family: "Montserrat Light";
+}
+form span{
+	font-size: 14px;
+}
+.any_button{
+	padding: 5px;
+	background-color: white;
+	color: black;
+	cursor: pointer;
+}
+.any_button:hover{
+	background-color: rgb(202, 202, 202);
+}
+.main_button{
+	padding: 6px;
+	border-radius: 15px;
+	background-color: orange;
+	color: black;
+	cursor: pointer;
+}
+.main_button:hover{
+	background-color: rgb(254, 77, 77);
+}
+.any_textline:focus{
+	background-color: rgb(202, 202, 202);
+	border: 2px solid rgb(119, 18, 0);
+}
+.home{
+	display: flex;
+	align-items: center;
+	font-size: 60px;
+	border-radius: 15px;
+}
+.home img{
+	width: 80px;
+	height: 60px;
+}
+.basket{
+	display: flex;
+	align-items: flex-start;
+	font-size: 60px;
+	border-radius: 15px;
+}
+.basket img{
+	width: 60px;
+	height: 60px;
+}
+.basket_size{
+	min-width: 30px;
+	max-height: 30px;
+	border-radius: 15px;
+	font-family: "Roboto-Black";
+	background-color: red;
+	font-size: 30px;
+	text-align: center;
+}
+.content{
+	font-family: "Roboto-Black";
+	padding: 10px 50px 0px 50px;
+	display: flex;
+	align-items: flex-start;
+	min-height: calc(100vh - 116px - 120px);	/* минус высота подвала и высота заголовка*/
+}
+.left_sidebar{
+	min-width: 200px;
+	max-width: 200px;
+	background-color: white;
+	padding: 10px;
+	border-radius: 15px;
+	position: sticky;	/* прилипнет к верху до 130 пикселей */
+	top: 130px;
+}
+.left_sidebar img{
+	width: 180px;
+	height: 180px;
+}
+.central_bar{
+	width: 100%;
+	justify-content: center;
+}
+.category{
+	flex-wrap: wrap;
+	display: flex;
+	justify-content: space-around;
+}
+.rod{
+	height: 30px;
+	background-color: white;
+	border-radius: 15px;
+	margin: 0px 6px 6px 6px;
+	padding: 8px;
+}
+.item{
+	background-color: white;
+	align-items: center;
+	max-width: 220px;
+	min-width: 220px;
+	border-radius: 15px;
+	margin: 6px;
+	padding: 6px;
+	position: relative;
+	padding-bottom: 50px;
+	z-index: 0;
+}
+.item img{
+	display: block;
+	width: 200px;
+	height: 200px;
+}
+.item_footer{
+	position: absolute;
+	bottom: 0px;
+	padding: 15px 0px 15px 0px;
+	display: flex;
+	align-items: center;
+	width: 208px;
+	justify-content: space-around;
+}
+.description{
+	width: 100%;
+	font-family: "Montserrat Light";
+}
+.right_sidebar{
+	min-width: 200px;
+	max-width: 200px;
+	text-align: center;
+	background-color: white;
+	padding: 10px;
+	border-radius: 15px;
+	position: sticky;	/* прилипнет к верху до 130 пикселей */
+	top: 130px;
+}
+.right_sidebar a{
+	display: block;
+	padding: 6px;
+	border-radius: 15px;
+}
+.login{
+	background-color: white;
+	margin: 0px 6px 0px 6px;
+	align-content: center;
+	text-align: center;
+	border-radius: 15px;
+	height: 500px;
+}
+.login input, button{	/*все инпуты которые находятся в логине*/
+	display: inline-block;
+	margin: 12px 0px 6px 0px;
+	width: 300px;
+	height: 30px;
+	border: 1px solid black;
+}
+.mini_profile_img{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	border: 2px solid gray;
+}
+.registration{
+	background-color: white;
+	margin: 0px 6px 0px 6px;
+	align-content: center;
+	text-align: center;
+	border-radius: 15px;
+	height: 500px;
+}
+.registration input, button{
+	display: inline-block;
+	margin: 12px 0px 6px 0px;
+	width: 300px;
+	height: 30px;
+	border: 1px solid black;
+}
+.social_network_ico{
+	border-radius: 50%;
+	border: 0;
+	width: 40px;
+	height: 40px;
+}
+.social_network a{
+	margin: 8px;
+	display: inline-block;
+	border-radius: 50%;
+	border:0;
+}
+.info div{
+	display: flex;
+	align-items: center;
+}
+.info img{
+	margin: 6px;
+}
+.about{
+	width: 300px;
+}
+.copyright{
+	width: 300px;
+}
+.error_msg{
+	font-size: 30px;
+}
+.basket_view{
+	background-color: white;
+	margin: 0px 6px 6px 6px;
+	padding: 15px;
+	border-radius: 15px;
+	display: block;
+	align-items: center;
+	text-align: center;
+	vertical-align: middle;
+}
+.tbl{
+	padding: 0 5% 0 5%;
+}
+.basket_table{
+	width: 100%;
+	border-collapse: collapse;	/* делает границы ячеек общими*/
+}
+th{
+	padding: 6px;
+	border: 1px solid black;
+	background-color: lightgray;
+	text-align: center;
+}
+.row{
+	border: 1px solid black;
+}
+td{
+	padding: 6px;
+	text-align: left;
+}
+.center_cell{
+	text-align: center;
+}
+.counter{
+	margin: 0px 6px 0px 6px;
+}
+.manager{
+	display: inline-block;
+	text-align: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	border-radius: 5px;
+	border: 1px solid rgb(202, 202, 202);
+}
+.place_order{
+	background-color: white;
+	margin: 0px 6px 6px 6px;
+	padding: 6px;
+	align-content: center;
+	text-align: center;
+	border-radius: 15px;
+}
+.place_order input, button{	/*все инпуты которые находятся в заказе*/
+	display: inline-block;
+	margin: 12px 0px 6px 0px;
+	width: 300px;
+	height: 30px;
+	border: 1px solid black;
+}
+.profile{
+	background-color: white;
+	margin: 0px 6px 6px 6px;
+	padding: 6px;
+	align-content: center;
+	text-align: center;
+	border-radius: 15px;
+}
+.user{
+	display: flex;
+}
+.user_img img{
+	width: 300px;
+	height: 300px;
+	border-radius: 15px;
+}
+.user_info{
+	text-align: left;
+	padding: 15px;
+}
+.mini_table_shell{
+	float: right;
+}
+.mini_table{
+	border-collapse: collapse;
+	background-color: lightgray;
+}
+.loader{
+	padding: 0px;
+	padding-bottom: 12px;
+}
+.any_item{
+	background-color: white;
+	margin: 0px 6px 6px 6px;
+	padding: 6px;
+	border-radius: 15px;
+}
+.any_item_img{
+	width: 300px;
+	height: 300px;
+}
+.any_item_info{
+	padding: 15px;
+	display: inline-block;
+	max-width: 700px;
+}
+.button_wrapper{
+	display: flex;	
+    justify-content: center;
+}
+.any_item_info *{
+	font-size: 20px;
+}
+.big_font{
+	font-size: 50px;
+}
+.reviews{
+	background-color: white;
+	margin: 0px 6px 6px 6px;
+	padding: 6px;
+	align-content: center;
+	text-align: center;
+	border-radius: 15px;
+}
+textarea{
+	border: 1px solid gray;
+	min-height: 100px;
+	max-height: 600px;
+    max-width: 600px;
+    min-width: 300px;
+}
+.reviews_loader_row_user{
+	padding: 15px;
+	border-right: 2px solid gray;
+}
+.reviews_loader_row{
+	display: flex;
+	align-items: flex-start;
+	background-color: lightgray;
+	border-radius: 15px;
+	padding: 15px;
+	margin: 15px;
+}
+.reviews_loader_row_comment{
+	text-align: left;
+	width: 100%;
+	margin-left: 15px;
+	padding: 15px;
+	border-radius: 15px;
+	background-color: white;
+	line-height: 1.5;
+}
+.delivery{
+	background-color: white;
+	margin: 0px 6px 6px 6px;
+	padding: 15px;
+	align-content: center;
+	text-align: center;
+	border-radius: 15px;
+	display: flex;
+    justify-content: center;
+}
+.delivery_head{
+	display: flex;
+	justify-content: center;
+    align-items: center;
+}
+.midl_font{
+	font-size: 25px;
+}
+.delivery_cell{
+	width: 50%;
+}
+.delivery_body{
+	padding: 15px;
+	text-align: left;
+	line-height: 1.5;
+}
+.all_about_us{
+	background-color: white;
+	margin: 0px 6px 6px 6px;
+	padding: 15px;
+	align-content: center;
+	text-align: center;
+	border-radius: 15px;
+}
+.all_about_us_body{
+	padding: 15px;
+	text-align: left;
+	line-height: 1.5;
+}
+.contacts{
+	background-color: white;
+	margin: 0px 6px 6px 6px;
+	padding: 15px;
+	align-content: center;
+	text-align: center;
+	border-radius: 15px;
+}
+.contacts_body{
+	padding: 15px;
+	text-align: left;
+	line-height: 1.5;
+}
+.underlined{
+	text-decoration: underline;
+}
+.rem_comm{
+	text-align: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	border-radius: 5px;
+	border: 1px solid rgb(202, 202, 202);
+}
+/*******************************
+* Теперь не уходят из жизни,   *
+* Теперь из жизни уводят.      *
+* И если кто-нибудь даже       *
+* Захочет, чтоб было иначе,    *
+* Опустит слабые руки,         *
+* Не зная, где сердце спрута   *
+* И есть ли у спрута сердце... *
+*******************************/
